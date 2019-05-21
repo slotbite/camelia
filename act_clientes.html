@@ -1,0 +1,223 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+	<head>
+		<title>Busqueda</title>
+		<meta content="Microsoft Visual Studio .NET 7.1" name="GENERATOR">
+		<meta content="Visual Basic .NET 7.1" name="CODE_LANGUAGE">
+		<meta content="JavaScript" name="vs_defaultClientScript">
+		<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
+		<LINK href="vvppcss/vvppcss.css" type="text/css" rel="stylesheet">
+        <script language="JavaScript" src="jvvpp/vvpp009.js" type="text/javascript"></script>
+		<script language="javascript">
+		
+		imagen = new Image(); 
+        imagen.src = "ivvpp/ivvpp0020.gif";
+		
+			function fabre_ventana(iparamt,icoord){
+			/*---------------------------*/
+				pant_emp = window.open("","", icoord + ",status=yes,scrollbars=yes,resizable=no");
+				pant_emp.location = iparamt
+			}
+			
+			function f_cliente(iparamt){
+			/*-------------------------*/
+				location.href = iparamt
+			}
+			
+    		function f_error(){
+			/*----------------*/
+				if(Form1.HD_error.value.length > 1 ) {
+				  if(Form1.HD_error.value == "UPDATE" ) {
+				     alert("La persona seleccionada no registra fecha de nacimiento...")
+				     Form1.Btt_modific.onclick()
+				  } else {
+    				  alert(Form1.HD_error.value)
+				  }
+                  Form1.HD_error.value = ''
+				}
+			}
+		</script>
+		<script language="javascript" type="text/javascript" >
+	          function Remueve_Opcion(Marcado,RutPer)
+	          {
+	          var radio = document.getElementById(Marcado,RutPer) ;
+	          document.getElementById('hdRutPer').Value = RutPer;
+	          document.Form1.Btt_modific.disabled = false;
+	               for(var i=3; i < document.getElementById("hdCantReg").value; i++) {
+                       if(i<10)
+                       {
+                       //alert(radio.id+" ***** "+ document.getElementById("dgrid_ctl02_rbnSeleccionar").id);
+                           if(radio.id != document.getElementById("dgrid_ctl0" + i + "_rbnSeleccionar").id)
+                           {
+                             document.getElementById("dgrid_ctl0" + i + "_rbnSeleccionar").checked=false;
+                             //var el = document.getElementById("dgrid_ctl0" + i + "_rbnSeleccionar");
+                             //el.parentNode.removeChild(el);
+                           }
+                       } else {
+                           if(radio.id != document.getElementById("dgrid_ctl" + i + "_rbnSeleccionar").id)
+                           {
+                             document.getElementById("dgrid_ctl" + i + "_rbnSeleccionar").checked=false;
+                           }
+                       }
+                   }
+	          }
+	          function Modificar_Vtna()
+	          {
+	             window.open('vvpp_0056.aspx?pId=' + document.getElementById('hdRutPer').Value ,'vvpp0056','width=550, height=450, status= no, resizable= yes, menubar=yes, scrollbars=yes, location=no, top=150, left=220').focus();
+	          }
+	    </script>
+	    
+    <style type="text/css">
+	    div.message{ position:absolute; left:0px; top:0px; width:100%; height:100%; background-color:#000; filter:alpha(opacity=20); -moz-opacity: 0.2; opacity: 0.2;}
+	    div#myAlert{ position:absolute; left:0px; top:10px; width:100%; text-align:center;}
+	    //.myAlert{ position:absolute; left:35%; padding:25px; width:250px; height:150px; background-color:#FFF; border:2px solid #000; margin:auto; text-align:left;}
+	    .closeAlert {position:absolute; right:450px; top:-50px; width:70px; height:70px; background-color:#FFF; background:url(ivvpp/ivvpp0020.gif) no-repeat top left;}
+    </style>
+	    
+	</head>
+	<body leftMargin="0" topMargin="0" MS_POSITIONING="GridLayout" onload="f_error();">
+		<form name="Form1" method="post" action="vvpp_0042.aspx" id="Form1">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTk5NTczNTU5Mg9kFgICAQ9kFggCDQ8PZBYCHgdvbmNsaWNrBSZqYXZhc2NyaXB0OmZfY2xpZW50ZSgndnZwcF8wMDU2LmFzcHgnKWQCDw88KwALAQAPFgoeC18hSXRlbUNvdW50AgQeCERhdGFLZXlzFgQFCjEyODAxNzM0LTgFCzA2MDUwMDM5NzA1BQk5NzMyODE0LTUFCjExNjE3OTAxLTYeEEN1cnJlbnRQYWdlSW5kZXhmHglQYWdlQ291bnQCAR4VXyFEYXRhU291cmNlSXRlbUNvdW50AgRkFgJmD2QWCAICD2QWQgIBD2QWAgIBDxAPFgIeBFRleHQFCjEyODAxNzM0LTgWAh4Hb25DbGljawU5UmVtdWV2ZV9PcGNpb24oJ2RncmlkX2N0bDAzX3JiblNlbGVjY2lvbmFyJywnMTI4MDE3MzQtOCcpZGRkAgIPDxYCHwYFDVJhbWlyZXogTWlsbGFkZAIDDw8WAh8GBQ1NYXJjbyBBbnRvbmlvZGQCBA8PFgIfBgUHNzIwNjctNGRkAgUPDxYCHwYFBiZuYnNwO2RkAgYPDxYCHwYFBiZuYnNwO2RkAgcPDxYCHwYFBUNGNTcxZGQCCA8PFgIfBgUBTmRkAgkPDxYCHwYFBiZuYnNwO2RkAgoPDxYCHwYFBiZuYnNwO2RkAgsPDxYCHwYFH09wZXJhZG9yIFByaW5jaXBhbCBDb252LiB5IEhURS5kZAIMDw8WAh8GBRJVbmlkYWQgQ29udmVyc2nDs25kZAINDw8WAh8GBQdDb2RlbGNvZGQCDg8PFgIfBgUfT3BlcmFkb3IgUHJpbmNpcGFsIENvbnYuIHkgSFRFLmRkAg8PDxYCHwYFAUNkZAIQDw8WAh8GBQFSZGQCEQ8PFgIfBgUIMDAwMzE3MTJkZAISDw8WAh8GBQYmbmJzcDtkZAITDw8WAh8GBQowNi8wNy8xOTc1ZGQCFA8PFgIfBgUEQ0gwMWRkAhUPDxYCHwYFATBkZAIWDw8WAh8GBQFNZGQCFw8PFgIfBgUGJm5ic3A7ZGQCGA8PFgIfBgUFUm9sIEJkZAIZDw8WAh8GBQQ5Q0gyZGQCGg8PFgIfBgUKSW5kZWZpbmlkb2RkAhsPDxYCHwYFC1JILTUwMDAxMDg2ZGQCHA8PFgIfBgUSVW5pZGFkIENvbnZlcnNpw7NuZGQCHQ8PFgIfBgULUkgtNTAwNTAwNzVkZAIeDw8WAh8GBR9PcGVyYWRvciBQcmluY2lwYWwgQ29udi4geSBIVEUuZGQCHw8PFgIfBgUEUkwtQmRkAiAPDxYCHwYFBVJvbCBCZGQCIQ8PFgIfBgUGJm5ic3A7ZGQCAw9kFkICAQ9kFgICAQ8QDxYCHwYFCzA2MDUwMDM5NzA1FgIfBwU6UmVtdWV2ZV9PcGNpb24oJ2RncmlkX2N0bDA0X3JiblNlbGVjY2lvbmFyJywnMDYwNTAwMzk3MDUnKWRkZAICDw8WAh8GBQ5SYW1pcmV6IE9ydGVnYWRkAgMPDxYCHwYFDU1hcmNvIEFudG9uaW9kZAIEDw8WAh8GBQYmbmJzcDtkZAIFDw8WAh8GBQYmbmJzcDtkZAIGDw8WAh8GBQYmbmJzcDtkZAIHDw8WAh8GBQYmbmJzcDtkZAIIDw8WAh8GBQFOZGQCCQ8PFgIfBgUGJm5ic3A7ZGQCCg8PFgIfBgUGJm5ic3A7ZGQCCw8PFgIfBgUGJm5ic3A7ZGQCDA8PFgIfBgUGJm5ic3A7ZGQCDQ8PFgIfBgUIUEXDkU9MRVNkZAIODw8WAh8GBQYmbmJzcDtkZAIPDw8WAh8GBQFFZGQCEA8PFgIfBgUBUGRkAhEPDxYCHwYFBiZuYnNwO2RkAhIPDxYCHwYFBiZuYnNwO2RkAhMPDxYCHwYFCjAxLzAzLzE5NjVkZAIUDw8WAh8GBQYmbmJzcDtkZAIVDw8WAh8GBQYmbmJzcDtkZAIWDw8WAh8GBQFNZGQCFw8PFgIfBgUGJm5ic3A7ZGQCGA8PFgIfBgUGJm5ic3A7ZGQCGQ8PFgIfBgUGJm5ic3A7ZGQCGg8PFgIfBgUGJm5ic3A7ZGQCGw8PFgIfBgUGJm5ic3A7ZGQCHA8PFgIfBgUGJm5ic3A7ZGQCHQ8PFgIfBgUGJm5ic3A7ZGQCHg8PFgIfBgUGJm5ic3A7ZGQCHw8PFgIfBgUGJm5ic3A7ZGQCIA8PFgIfBgUGJm5ic3A7ZGQCIQ8PFgIfBgUGJm5ic3A7ZGQCBA9kFkICAQ9kFgICAQ8QDxYCHwYFCTk3MzI4MTQtNRYCHwcFOFJlbXVldmVfT3BjaW9uKCdkZ3JpZF9jdGwwNV9yYm5TZWxlY2Npb25hcicsJzk3MzI4MTQtNScpZGRkAgIPDxYCHwYFDVJhbWlyZXogUG9uY2VkZAIDDw8WAh8GBQ1NYXJjbyBBbnRvbmlvZGQCBA8PFgIfBgUGJm5ic3A7ZGQCBQ8PFgIfBgUGNzc1MDQwZGQCBg8PFgIfBgUGJm5ic3A7ZGQCBw8PFgIfBgUGJm5ic3A7ZGQCCA8PFgIfBgUBRWRkAgkPDxYCHwYFBiZuYnNwO2RkAgoPDxYCHwYFBiZuYnNwO2RkAgsPDxYCHwYFC0luZm9ybWF0aWNhZGQCDA8PFgIfBgULSW5mb3JtYXRpY2FkZAINDw8WAh8GBRBJbmdlbmllcm9zIGNoaWxlZGQCDg8PFgIfBgUJaW5nZW5pZXJvZGQCDw8PFgIfBgUBRWRkAhAPDxYCHwYFAVJkZAIRDw8WAh8GBQYmbmJzcDtkZAISDw8WAh8GBQFDZGQCEw8PFgIfBgUKMTIvMDYvMTk2NmRkAhQPDxYCHwYFBiZuYnNwO2RkAhUPDxYCHwYFATFkZAIWDw8WAh8GBQFNZGQCFw8PFgIfBgUTbXJhbWkwMDZAY29kZWxjby5jbGRkAhgPDxYCHwYFBiZuYnNwO2RkAhkPDxYCHwYFBiZuYnNwO2RkAhoPDxYCHwYFBiZuYnNwO2RkAhsPDxYCHwYFBiZuYnNwO2RkAhwPDxYCHwYFBiZuYnNwO2RkAh0PDxYCHwYFBiZuYnNwO2RkAh4PDxYCHwYFBiZuYnNwO2RkAh8PDxYCHwYFBiZuYnNwO2RkAiAPDxYCHwYFBiZuYnNwO2RkAiEPDxYCHwYFBiZuYnNwO2RkAgUPZBZCAgEPZBYCAgEPEA8WAh8GBQoxMTYxNzkwMS02FgIfBwU5UmVtdWV2ZV9PcGNpb24oJ2RncmlkX2N0bDA2X3JiblNlbGVjY2lvbmFyJywnMTE2MTc5MDEtNicpZGRkAgIPDxYCHwYFD1JhbWlyZXogU2FudGFuYWRkAgMPDxYCHwYFDk1hcmNvcyBBbnRvbmlvZGQCBA8PFgIfBgUGJm5ic3A7ZGQCBQ8PFgIfBgUGJm5ic3A7ZGQCBg8PFgIfBgUGJm5ic3A7ZGQCBw8PFgIfBgUGJm5ic3A7ZGQCCA8PFgIfBgUBTmRkAgkPDxYCHwYFBiZuYnNwO2RkAgoPDxYCHwYFBiZuYnNwO2RkAgsPDxYCHwYFBiZuYnNwO2RkAgwPDxYCHwYFBiZuYnNwO2RkAg0PDxYCHwYFBUVTU0FUZGQCDg8PFgIfBgUGJm5ic3A7ZGQCDw8PFgIfBgUBRWRkAhAPDxYCHwYFAVJkZAIRDw8WAh8GBQYmbmJzcDtkZAISDw8WAh8GBQYmbmJzcDtkZAITDw8WAh8GBQoyMi8wNy8xOTc3ZGQCFA8PFgIfBgUGJm5ic3A7ZGQCFQ8PFgIfBgUGJm5ic3A7ZGQCFg8PFgIfBgUGJm5ic3A7ZGQCFw8PFgIfBgUGJm5ic3A7ZGQCGA8PFgIfBgUGJm5ic3A7ZGQCGQ8PFgIfBgUGJm5ic3A7ZGQCGg8PFgIfBgUGJm5ic3A7ZGQCGw8PFgIfBgUGJm5ic3A7ZGQCHA8PFgIfBgUGJm5ic3A7ZGQCHQ8PFgIfBgUGJm5ic3A7ZGQCHg8PFgIfBgUGJm5ic3A7ZGQCHw8PFgIfBgUGJm5ic3A7ZGQCIA8PFgIfBgUGJm5ic3A7ZGQCIQ8PFgIfBgUGJm5ic3A7ZGQCEQ8PZBYCHwAFIWphdmFzY3JpcHQ6cmV0dXJuIHdpbmRvdy5jbG9zZSgpO2QCEw8PZBYCHwcFHk1vZGlmaWNhcl9WdG5hKCk7cmV0dXJuIGZhbHNlO2QYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFggFGmRncmlkJGN0bDAzJHJiblNlbGVjY2lvbmFyBRpkZ3JpZCRjdGwwMyRyYm5TZWxlY2Npb25hcgUaZGdyaWQkY3RsMDQkcmJuU2VsZWNjaW9uYXIFGmRncmlkJGN0bDA0JHJiblNlbGVjY2lvbmFyBRpkZ3JpZCRjdGwwNSRyYm5TZWxlY2Npb25hcgUaZGdyaWQkY3RsMDUkcmJuU2VsZWNjaW9uYXIFGmRncmlkJGN0bDA2JHJiblNlbGVjY2lvbmFyBRpkZ3JpZCRjdGwwNiRyYm5TZWxlY2Npb25hcnSF5CvtsYPzjUzcsNETWnWMDcal" />
+</div>
+
+<script type="text/javascript">
+<!--
+var theForm = document.forms['Form1'];
+if (!theForm) {
+    theForm = document.Form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+// -->
+</script>
+
+
+<script src="/desa_vvpp/WebResource.axd?d=3lC5CkLTZo17F4QZ5jLtcw2&amp;t=633964179561718750" type="text/javascript"></script>
+
+<script language="javascript"> var MsgBoxTipoMensaje; var MsgBoxTextoMensaje; window.attachEvent("onfocus", MsgBoxMostrarMensaje); function MsgBoxMostrarMensaje() { if (MsgBoxTextoMensaje) { if (MsgBoxTextoMensaje != "") { if (MsgBoxTipoMensaje==2) { alert(MsgBoxTextoMensaje); } else {if (confirm(MsgBoxTextoMensaje)) { MsgBoxTextoMensaje="";} else { MsgBoxTextoMensaje="";}} MsgBoxTextoMensaje="";  }}} </script>
+			<TABLE id="Table1" cellSpacing="0" cellPadding="0" width="530" border="0">
+				<TR>
+					<td background="ivvpp/ivvpp0002.jpg" style="width: 34px"></td>
+					<td vAlign="bottom" width="500">&nbsp;
+						<span id="Label1" class="texto18">BUSCAR CLIENTES</span></td>
+				</TR>
+				<TR>
+					<td background="ivvpp/ivvpp0002.jpg" height="5" style="width: 34px">&nbsp;</td>
+					<td width="500" background="ivvpp/ivvpp0005.jpg" height="5">&nbsp;</td>
+				</TR>
+				<TR>
+					<td background="ivvpp/ivvpp0002.jpg" height="6" style="width: 34px"></td>
+					<td align="left" width="500" height="6">
+						<TABLE class="texto01" id="Table2" cellPadding="0" width="448" border="0">
+							<TR>
+								<td style="WIDTH: 70px; HEIGHT: 12px"></td>
+								<td style="WIDTH: 224px; HEIGHT: 12px"></td>
+								<td style="WIDTH: 70px; HEIGHT: 12px"></td>
+								<td style="HEIGHT: 12px"></td>
+							</TR>
+							<TR>
+								<td style="WIDTH: 70px; HEIGHT: 3px">&nbsp;&nbsp;&nbsp;&nbsp; Apellido</td>
+								<td style="WIDTH: 224px; HEIGHT: 3px"><input name="cmd_apellido" type="text" value="ramirez" id="cmd_apellido" class="input-normal" style="width:216px;" /></td>
+								<td style="WIDTH: 70px; HEIGHT: 3px" align="center"></td>
+								<td style="HEIGHT: 3px" align="center"></td>
+							</TR>
+							<TR>
+								<td style="WIDTH: 70px; HEIGHT: 20px">&nbsp;&nbsp;&nbsp;&nbsp; Nombre</td>
+								<td style="WIDTH: 224px; HEIGHT: 20px"><input name="cmd_nombre" type="text" value="marco" id="cmd_nombre" class="input-normal" style="width:216px;" /></td>
+								<td style="WIDTH: 70px; HEIGHT: 20px" align="center"></td>
+								<td style="HEIGHT: 20px" align="center"></td>
+							</TR>
+							<TR>
+								<td style="WIDTH: 70px; HEIGHT: 3px">&nbsp;&nbsp;&nbsp;&nbsp; Rut.</td>
+								<td style="WIDTH: 224px; HEIGHT: 3px"><input name="cmd_rut" type="text" id="cmd_rut" class="input-normal" style="width:216px;" /></td>
+								<td style="WIDTH: 70px; HEIGHT: 3px" align="center"></td>
+								<td style="HEIGHT: 3px" align="center"></td>
+							</TR>
+							<TR>
+								<td style="WIDTH: 70px; HEIGHT: 3px">&nbsp;&nbsp;&nbsp;&nbsp; NIC</td>
+								<td style="WIDTH: 224px; HEIGHT: 3px"><input name="cmd_nic" type="text" id="cmd_nic" class="input-normal" style="width:216px;" /></td>
+								<td style="WIDTH: 70px; HEIGHT: 3px" align="center"><input type="submit" name="cmd_buscar" value="Buscar" onclick="javascript:MyAlert('');" id="cmd_buscar" class="boton" /></td>
+								<td style="HEIGHT: 3px" align="center"><input type="submit" name="cmd_agregar" value="Agregar" onclick="javascript:f_cliente('vvpp_0056.aspx');" id="cmd_agregar" class="boton" /></td>
+							</TR>
+						</TABLE>
+					</td>
+				</TR>
+				<TR>
+					<td background="ivvpp/ivvpp0002.jpg" height="145" style="width: 34px"></td>
+					<td vAlign="top" align="center" width="500" height="145">
+						<P><table class="link10" cellspacing="0" cellpadding="3" align="Left" rules="rows" border="1" id="dgrid" style="background-color:White;border-color:#E7E7FF;border-width:1px;border-style:None;height:20px;width:454px;border-collapse:collapse;">
+	<tr class="opc_fondo_enc_grilla" style="color:#F7F7F7;font-weight:bold;">
+		<td>&nbsp;</td><td>Rut</td><td>Apellidos</td><td>Nombres</td>
+	</tr><tr>
+		<td></td><td>
+											<input id="dgrid_ctl03_rbnSeleccionar" type="radio" name="dgrid$ctl03$rbnSeleccionar" value="rbnSeleccionar" onclick="Remueve_Opcion('dgrid_ctl03_rbnSeleccionar','12801734-8');" /><label for="dgrid_ctl03_rbnSeleccionar">12801734-8</label>
+										</td><td>Ramirez Milla</td><td>Marco Antonio</td>
+	</tr><tr style="background-color:#F7F7F7;">
+		<td></td><td>
+											<input id="dgrid_ctl04_rbnSeleccionar" type="radio" name="dgrid$ctl04$rbnSeleccionar" value="rbnSeleccionar" onclick="Remueve_Opcion('dgrid_ctl04_rbnSeleccionar','06050039705');" /><label for="dgrid_ctl04_rbnSeleccionar">06050039705</label>
+										</td><td>Ramirez Ortega</td><td>Marco Antonio</td>
+	</tr><tr>
+		<td></td><td>
+											<input id="dgrid_ctl05_rbnSeleccionar" type="radio" name="dgrid$ctl05$rbnSeleccionar" value="rbnSeleccionar" onclick="Remueve_Opcion('dgrid_ctl05_rbnSeleccionar','9732814-5');" /><label for="dgrid_ctl05_rbnSeleccionar">9732814-5</label>
+										</td><td>Ramirez Ponce</td><td>Marco Antonio</td>
+	</tr><tr style="background-color:#F7F7F7;">
+		<td></td><td>
+											<input id="dgrid_ctl06_rbnSeleccionar" type="radio" name="dgrid$ctl06$rbnSeleccionar" value="rbnSeleccionar" onclick="Remueve_Opcion('dgrid_ctl06_rbnSeleccionar','11617901-6');" /><label for="dgrid_ctl06_rbnSeleccionar">11617901-6</label>
+										</td><td>Ramirez Santana</td><td>Marcos Antonio</td>
+	</tr><tr class="texto01" align="center" style="color:#4A3C8C;background-color:#E7E7FF;">
+		<td colspan="4"><span>1</span></td>
+	</tr>
+</table></P>
+					</td>
+				</TR>
+				<TR>
+					<td background="ivvpp/ivvpp0002.jpg" height="10" style="width: 34px"></td>
+					<td vAlign="middle" align="center" width="500" height="10">
+						<TABLE id="Table3" style="WIDTH: 475px; HEIGHT: 25px; background-color: whitesmoke;" cellSpacing="1" cellPadding="1" width="475"
+							align="center" border="0">
+							<TR>
+								<td style="WIDTH: 173px" align="center" width="173"><input type="submit" name="cmd_atras" value="Cerrar" onclick="javascript:return window.close();" id="cmd_atras" class="boton" style="width:70px;" /></td>
+								<td style="WIDTH: 124px" align="center" width="124"><input type="submit" name="Btt_modific" value="Modificar" id="Btt_modific" disabled="disabled" class="boton" onClick="Modificar_Vtna();return false;" /></td>
+								<td align="center"><input type="submit" name="Btt_aceptar" value="Aceptar" id="Btt_aceptar" class="boton" /></td>
+							</TR>
+						</TABLE>
+					
+                        <input type="hidden" name="HD_error" id="HD_error" />
+                        <input type="hidden" name="hdCantReg" id="hdCantReg" value="7" />
+                        <input type="hidden" name="hdRutPer" id="hdRutPer" />
+					</td>
+				</TR>
+			</TABLE>
+		
+<div>
+
+	<input type="hidden" name="__SCROLLPOSITIONX" id="__SCROLLPOSITIONX" value="0" />
+	<input type="hidden" name="__SCROLLPOSITIONY" id="__SCROLLPOSITIONY" value="0" />
+	<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+	<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWEQLAn+3YCgKKquqGBgLXkPujAwLJ3ODuCAL2hK3aBALWre0dAqa6yqoLAqTv5/8BApfsvOsLApKr59YOAvXK1tUIAvLFw8IHAvrq0K0HAuTY16EIApzrnaEEAof9rgYCt5ezlgF2Swp6kHrHz4irgpKWyRvSSxyH+w==" />
+</div>
+
+<script type="text/javascript">
+<!--
+
+theForm.oldSubmit = theForm.submit;
+theForm.submit = WebForm_SaveScrollPositionSubmit;
+
+theForm.oldOnSubmit = theForm.onsubmit;
+theForm.onsubmit = WebForm_SaveScrollPositionOnSubmit;
+
+theForm.oldOnLoad = window.onload;
+window.onload = WebForm_RestoreScrollPosition;
+// -->
+</script>
+</form>
+	</body>
+</HTML>

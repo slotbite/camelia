@@ -1,0 +1,21 @@
+/*body {
+   background: black;
+   font-size: 12pt;
+   margin: 0px 
+   }*/
+
+.oculto  {
+   display: none;
+   }
+
+/*   
+@media print
+{
+ .page-break { display:block; page-break-before:always; }
+}
+.main {
+	margin-left: 0pt;
+	margin-right: 0pt; 
+    padding-top: 1em;
+    border-top: 1px solid #930;
+	}

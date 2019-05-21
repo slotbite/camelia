@@ -1,0 +1,174 @@
+.input-normal
+{
+	border-right: #969696 1px solid;
+	background-position: left top;
+	border-top: #737373 1px solid;
+	padding-left: 3px;
+	font-weight: normal;
+	font-size: 14px;
+	background-image: url(../ivvpp/ivvpp0008.jpg);
+	border-left: #737373 1px solid;
+	color: #000000;
+	border-bottom: #969696 1px solid;
+	background-repeat: repeat-x;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.input-grilla
+{
+	border-right: 1px;
+	background-position: left bottom;
+	border-top: 1px;
+	padding-left: 1px;
+	font-weight: normal;
+	font-size: 10px;
+	background-image: url(../ivvpp/ivvpp0007.jpg);
+	border-left: 1px;
+	color: #000000;
+	border-bottom: #969696 1px solid;
+	background-repeat: repeat-x;
+	font-family: Verdana;
+}
+
+.input-bloque
+{
+    border-top: 0px dashed;
+    border-bottom: #969696 1px solid;
+    border-right: 0px dashed;
+    border-left: 0px dashed;
+    background-position: left bottom;
+    padding-left: 1px;
+    font-weight: normal;
+    font-size: 10px;
+    background-image: url(../ivvpp/ivvpp0007.jpg);
+    color: #000000;
+    background-repeat: repeat-x;
+    font-family: Verdana;
+}
+
+.link10 { font-family: Arial, Helvetica, sans-serif; font-size: 10px; text-decoration: none }
+.link11 { font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #a05830; text-decoration: none }
+.link12 { font-family: Arial, Helvetica, sans-serif; font-size: 12px; text-decoration: none}
+.link14 { text-align:justify; font-size: 10px; color: #a05830; font-family: Arial, Helvetica, sans-serif;}
+
+.texto01 { font-family: Arial, Helvetica, sans-serif; font-size: 10px;}
+.texto10zz { font-family: Courier New, Courier, mono; font-size: 10px;}
+.texto08 {  font-family: Arial, Helvetica, sans-serif; font-size: 8px}
+.texto09 {  font-family: Arial, Helvetica, sans-serif; font-size: 9px}
+.texto10 {  font-family: Arial, Helvetica, sans-serif; font-size: 11px}
+.texto11 {  font-family: Arial, Helvetica, sans-serif; font-size: 11px}
+.texto12
+{
+	font-weight: bold;
+	font-size: 12px;
+	color: #a05830;
+	font-family: Tahoma;
+}
+.txtngr
+{
+	font-weight: bold;
+
+}
+.texto13 {  font-family: Arial, Helvetica, sans-serif; font-size: 12px}
+
+.texto1313 {  font-family: Arial, Helvetica, sans-serif; font-size: 13px}
+
+.texto15
+{
+	font-weight: bold;
+	font-size: 15px;
+	color: #ffffff;
+	font-family: 'Times New Roman';
+	text-decoration: underline;
+}
+.texto18
+{
+	font-size: 18px;
+	color: #ffffff;
+	font-family: 'Times New Roman';
+	text-decoration: underline;
+}
+.texto18_i
+{
+	font-size: 18px;
+	font-family: 'Times New Roman';
+	text-decoration: underline;
+}
+
+.curier
+{
+	font-family: 'Courier New';
+	font-size: 13px;
+	color: #a05830;
+	text-decoration: none;
+}
+.solicitud { font-family: Arial, Helvetica, sans-serif; font-size: 10px; color: #006699; text-decoration: none}
+.boton
+{
+	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+}
+
+.Treeview8
+{
+	font: 8pt Tahoma;
+	color: #ff0000;
+	text-decoration: none;
+} 
+
+.opc_sub_menu
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    color: #000000;
+}
+.opc_fondo_enc_grilla
+{
+	background-color: #b77948;
+}
+.titulos {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #990000; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.titulos02 {
+	FONT-WEIGHT: bold; FONT-SIZE: 15px; COLOR: #990000; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+
+.letraddl {
+	FONT-SIZE: 10px; FONT-FAMILY: verdana;
+	font-weight: bold;
+	color:#C4521B;
+	background-color: #f4efea;	
+}
+
+.pantalla_normal {
+	color:#ffffff;
+	background-color: #000080;
+	}
+.tit_grilla_normal {
+	color:#000080;
+	background-color: #ffffff;
+	}
+
+
+/*
+no habilitado
+a:hover { font-family: Arial, Helvetica, sans-serif;  color: #006699; text-decoration: underline}
+a:visited { font-family: Arial, Helvetica, sans-serif;  color: #006699}
+*/
+
+/*
+    
+a:hover { text-decoration: underline}
+a:visited { }
+*/
+.texto24 {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 24px;
+	text-decoration: underline;
+
+}
+.txtventas {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+}

@@ -1,0 +1,84 @@
+<?
+//incluímos la clase ajax
+require ('xajax/xajax_core/xajax.inc.php');
+
+//instanciamos el objeto de la clase xajax
+$xajax = new xajax(); 
+$xajax->setCharEncoding('ISO-8859-1');
+$xajax->configure('decodeUTF8Input',true);
+
+function select_combinado($id_provincia){
+   $madrid = array("Madrid", "Las Rozas", "Móstoles", "San Sebastián de los Reyes");
+   $valencia = array("Valencia", "La Eliana", "Paterna", "Cullera");
+   $barcelona = array("Barcelona", "Badalona");
+   $leon = array ("León", "Astorga", "Villamejil");
+   $poblaciones = array($madrid, $valencia, $barcelona, $leon);
+   
+   $nuevo_select = "<select name='poblaciones'>";
+   
+   for ($i=0; $i<count($poblaciones[$id_provincia]); $i++){
+   //for ($i=0; $i<2; $i++){
+      $nuevo_select .= '<option value="' . $i . '">' . $poblaciones[$id_provincia][$i] . '</option>';
+   }
+   $nuevo_select .= "</select>";
+   return $nuevo_select;
+}
+
+function generar_select($cod_provincia){
+   $respuesta = new xajaxResponse();
+   $respuesta->setCharacterEncoding('ISO-8859-1');
+   
+   if ($cod_provincia==999){
+      $nuevo_select = '<select name="poblaciones">
+                  <option value=0>Elegir provincia</option>
+                  </select>
+                  ';
+   }else{
+      $nuevo_select = select_combinado($cod_provincia);
+   }
+   $respuesta->Assign("seleccombinado","innerHTML",$nuevo_select);
+   
+   return $respuesta;
+}
+   
+$xajax->register(XAJAX_FUNCTION, 'generar_select'); 
+
+//El objeto xajax tiene que procesar cualquier petición
+$xajax->processRequest();
+?>
+
+<html>
+<head>
+   <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=ISO-8859-1">
+   <title>Selects combinados en PHP y Ajax - Desarrolloweb.com</title>
+   <?
+   //Esta línea no cambia porque el printJavascript sigue recibiendo 
+   //la ruta a la carpeta raíz donde están las librerías xajax.
+   $xajax->printJavascript("xajax/");
+   ?>
+</head>
+
+<body>
+
+<form name="formulario">
+Provincia:
+<br>
+<select name="provincia" onChange="xajax_generar_select(document.formulario.provincia.options[document.formulario.provincia.selectedIndex].value)">
+<option value="999">Selecciona la provincia</option>
+<option value=0>Madrid</option>
+<option value=1>Valencia</option>
+<option value=2>Barcelona</option>
+<option value=3>León</option>
+</select>
+<br>
+<br>
+Selecciona Población: <div id="seleccombinado">
+<select name="poblaciones">
+<option value=0>Elegir provincia</option>
+</select>
+</div>
+</form>
+Por DesarrolloWeb.com!
+</body>
+</html> 

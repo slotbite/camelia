@@ -1,0 +1,193 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head><title>
+	Lista de usuarios
+</title><link href="sasecss/sasecss.css" rel="stylesheet" type="text/css" />
+    <script  type="text/javascript">
+        function f_Modificar(sUsuario){
+        /*-----------------------------------*/
+            pant_emp = window.open("","Cuatro","top=150,left=200,width=530,height=450,status=yes,scrollbars=yes,resizable=no");
+	        pant_emp.location = "wsase_0210.aspx?Opcion=2&pId=" + sUsuario 
+        }
+        function f_grupos(sId){
+            location.href("wsase_020.aspx?pId=" + sId );
+        }
+        function TABLE1_onclick() {
+
+        }
+
+    </script>
+</head>
+<body>
+<?php
+echo $_POST
+if (!$_POST){ 
+?> 
+   <form name="form1"   method="post" action="eco001.php" id="form1">
+
+<script type="text/javascript">
+<!--
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+// -->
+</script>
+
+
+<script src="/sase/WebResource.axd?d=4iz2DVGP0akyxBBfOQ5hzQ2&amp;t=633964179561718750" type="text/javascript"></script>
+
+    <div>
+        <table style="width: 712px; left: 5px; position: absolute; top: 3px;" cellspacing="0" id="TABLE1" onclick="return TABLE1_onclick()">
+            <tr>
+                <td style="width: 28px; background-image: url(isase/isase478.jpg);">
+                </td>
+                <td style="width: 636px">
+                    <span id="Label2" class="texto18">LISTADO DE USUARIOS</span></td>
+            </tr>
+            <tr>
+                <td style="width: 28px; height: 142px; background-image: url(isase/isase478.jpg);">
+                </td>
+                <td style="height: 142px; width: 636px; vertical-align: top;">
+                    <div>
+	<table class="link10" cellspacing="0" cellpadding="3" align="Left" rules="rows" border="1" id="grdDatos" style="background-color:White;border-color:#E7E7FF;border-width:1px;border-style:solid;width:655px;border-collapse:collapse;left: 35px;
+                        top: 276px">
+		<tr style="color:#F7F7F7;background-color:#A55129;">
+			<th scope="col">Usuario</th><th scope="col">Paterno</th><th scope="col">Materno</th><th scope="col">Nombres</th><th scope="col">Fecha Ini.</th><th scope="col">Habilitado</th><th scope="col">Grupos</th>
+		</tr><tr style="color:#4A3C8C;">
+			    <td height="47"> <a id="grdDatos_ctl02_HyperLink1" class="link10" href="javascript:f_Modificar(&quot;RACEV001&quot;)">RACEV001</a> 
+                </td>
+                <td>ACEVEDO</td><td>ALIAGA</td><td>RAFAEL ALFONSO</td><td>24/03/2008</td><td align="center">
+                                    <span id="grdDatos_ctl02_lblSN">Sí</span>
+                                </td><td align="center">
+                                    <input type="image" name="grdDatos$ctl02$imgGrp" id="grdDatos_ctl02_imgGrp" title="Opciones de Grupo" src="isase/isase459.jpg" onclick="f_grupos('RACEV001');return false;" style="border-width:0px;" />
+                                </td>
+		</tr>
+		
+		<tr style="color:#4A3C8C;background-color:#F7F7F7;">
+			<td>
+                                    <a id="grdDatos_ctl11_HyperLink1" class="link10" href="javascript:f_Modificar(&quot;RARAY005&quot;)">RARAY005</a>
+                                </td><td>ARAYA</td><td>GALDAMEZ</td><td>RENE ORLANDO</td><td>20/03/2009</td><td align="center">
+                                    <span id="grdDatos_ctl11_lblSN">Sí</span>
+                                </td><td align="center">
+                                    <input type="image" name="grdDatos$ctl11$imgGrp" id="grdDatos_ctl11_imgGrp" title="Opciones de Grupo" src="isase/isase459.jpg" onclick="f_grupos('RARAY005');return false;" style="border-width:0px;" />
+                                </td>
+		</tr><tr style="color:#4A3C8C;">
+			<td>
+                                    <a id="grdDatos_ctl12_HyperLink1" class="link10" href="javascript:f_Modificar(&quot;EARAYA&quot;)">EARAYA</a>
+                                </td><td>ARAYA</td><td>OLIVARES</td><td>EDGARDO DELROSARIO</td><td>02/06/2008</td><td align="center">
+                                    <span id="grdDatos_ctl12_lblSN">Sí</span>
+                                </td><td align="center">
+                                    <input type="image" name="grdDatos$ctl12$imgGrp" id="grdDatos_ctl12_imgGrp" title="Opciones de Grupo" src="isase/isase459.jpg" onclick="f_grupos('EARAYA');return false;" style="border-width:0px;" />
+                                </td>
+		</tr><tr style="color:#4A3C8C;background-color:#F7F7F7;">
+			<td>
+                                    <a id="grdDatos_ctl13_HyperLink1" class="link10" href="javascript:f_Modificar(&quot;AARAY001&quot;)">AARAY001</a>
+                                </td><td>ARAYA</td><td>PERALTA</td><td>ALEJANDRO ENRIQUE</td><td>24/03/2008</td><td align="center">
+                                    <span id="grdDatos_ctl13_lblSN">Sí</span>
+                                </td><td align="center">
+                                    <input type="image" name="grdDatos$ctl13$imgGrp" id="grdDatos_ctl13_imgGrp" title="Opciones de Grupo" src="isase/isase459.jpg" onclick="f_grupos('AARAY001');return false;" style="border-width:0px;" />
+                                </td>
+		</tr><tr style="color:#4A3C8C;">
+			<td>
+                                    <a id="grdDatos_ctl14_HyperLink1" class="link10" href="javascript:f_Modificar(&quot;JARDILES&quot;)">JARDILES</a>
+                                </td><td>ARDILES</td><td>ZEBALLOS</td><td>JORGE JUAN</td><td>28/07/2009</td><td align="center">
+                                    <span id="grdDatos_ctl14_lblSN">Sí</span>
+                                </td><td align="center">
+                                    <input type="image" name="grdDatos$ctl14$imgGrp" id="grdDatos_ctl14_imgGrp" title="Opciones de Grupo" src="isase/isase459.jpg" onclick="f_grupos('JARDILES');return false;" style="border-width:0px;" />
+                                </td>
+		</tr>
+		<tr style="color:#4A3C8C;">
+			<td>
+                                    <a id="grdDatos_ctl16_HyperLink1" class="link10" href="javascript:f_Modificar(&quot;HASTUDIL&quot;)">HASTUDIL</a>
+                                </td><td>ASTUDILLO</td><td>VALENCIA</td><td>HECTOR MIGUEL</td><td>17/03/2008</td><td align="center">
+                                    <span id="grdDatos_ctl16_lblSN">Sí</span>
+                                </td><td align="center">
+                                    <input type="image" name="grdDatos$ctl16$imgGrp" id="grdDatos_ctl16_imgGrp" title="Opciones de Grupo" src="isase/isase459.jpg" onclick="f_grupos('HASTUDIL');return false;" style="border-width:0px;" />
+                                </td>
+		</tr><tr style="color:#4A3C8C;background-color:#F7F7F7;">
+			<td>
+                                    <a id="grdDatos_ctl17_HyperLink1" class="link10" href="javascript:f_Modificar(&quot;LAVAL001&quot;)">LAVAL001</a>
+                                </td><td>AVALOS</td><td>ARAYA</td><td>LUIS ABDON</td><td>23/05/2008</td><td align="center">
+                                    <span id="grdDatos_ctl17_lblSN">Sí</span>
+                                </td><td align="center">
+                                    <input type="image" name="grdDatos$ctl17$imgGrp" id="grdDatos_ctl17_imgGrp" title="Opciones de Grupo" src="isase/isase459.jpg" onclick="f_grupos('LAVAL001');return false;" style="border-width:0px;" />
+                                </td>
+		</tr><tr style="color:#4A3C8C;">
+			<td>
+                                    <a id="grdDatos_ctl18_HyperLink1" class="link10" href="javascript:f_Modificar(&quot;SAVIL002&quot;)">SAVIL002</a>
+                                </td><td>AVILA</td><td>ASTORGA</td><td>SEGUNDO GENARO</td><td>02/06/2008</td><td align="center">
+                                    <span id="grdDatos_ctl18_lblSN">Sí</span>
+                                </td><td align="center">
+                                    <input type="image" name="grdDatos$ctl18$imgGrp" id="grdDatos_ctl18_imgGrp" title="Opciones de Grupo" src="isase/isase459.jpg" onclick="f_grupos('SAVIL002');return false;" style="border-width:0px;" />
+                                </td>
+		</tr><tr style="color:#4A3C8C;background-color:#F7F7F7;">
+			<td>
+                                    <a id="grdDatos_ctl19_HyperLink1" class="link10" href="javascript:f_Modificar(&quot;JBARTURE&quot;)">JBARTURE</a>
+                                </td><td>BARTUREN</td><td>ZABALA</td><td>JUAN IGNACIO</td><td>05/05/2008</td><td align="center">
+                                    <span id="grdDatos_ctl19_lblSN">Sí</span>
+                                </td><td align="center">
+                                    <input type="image" name="grdDatos$ctl19$imgGrp" id="grdDatos_ctl19_imgGrp" title="Opciones de Grupo" src="isase/isase459.jpg" onclick="f_grupos('JBARTURE');return false;" style="border-width:0px;" />
+                                </td>
+		</tr><tr style="color:#4A3C8C;">
+			<td>
+                                    <a id="grdDatos_ctl20_HyperLink1" class="link10" href="javascript:f_Modificar(&quot;ABASTIAS&quot;)">ABASTIAS</a>
+                                </td><td>BASTIAS</td><td>URRUTIA</td><td>ANGEL ERNESTO</td><td>24/03/2008</td><td align="center">
+                                    <span id="grdDatos_ctl20_lblSN">Sí</span>
+                                </td><td align="center">
+                                    <input type="image" name="grdDatos$ctl20$imgGrp" id="grdDatos_ctl20_imgGrp" title="Opciones de Grupo" src="isase/isase459.jpg" onclick="f_grupos('ABASTIAS');return false;" style="border-width:0px;" />
+                                </td>
+		</tr>
+																					
+	</table>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 28px; height: 48px; background-image: url(isase/isase478.jpg);">
+                </td>
+                <td style="height: 48px; width: 636px;">
+                    <table id="Table4" border="0" cellpadding="0" cellspacing="0" style="width: 620px;
+                        height: 27px; background-color: #f2f4f4;">
+                        <tr>
+                            <td style="width: 119px; height: 25px">
+                            </td>
+                            <td style="width: 313px; height: 25px">
+                                </td>
+                            <td style="width: 163px; height: 25px">
+                                <input type="submit" name="btnNuevo" value="Agregar" onclick="<?php $nombre == "hola"; ?>" id="btnNuevo" style="width:68px;" /></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        
+    
+    </div>
+    
+<div>
+
+	<input type="hidden" name="__SCROLLPOSITIONX" id="__SCROLLPOSITIONX" value="0" />
+	<input type="hidden" name="__SCROLLPOSITIONY" id="__SCROLLPOSITIONY" value="0" />
+	<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+	<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWcAKpsPX8CgKNnbyfBwKNnbj9BgKNnaTjCQKNnaDBCQKNnayfCAKNnaj9BwKNnZSNBQKNnZDzBgLK47PjCALK46/BCALK47ufBwLK47f9BgLK46PjCQLK45/BCQLK46ufCALK46f9BwLK45ONBQLK44/zBgKL67PjCAKL66/BCAKL67ufBwKL67f9BgKL66PjCQKL65/BCQKL66ufCAKL66f9BwKL65ONBQKL64/zBgLQ9bPjCALQ9a/BCALQ9bufBwLQ9bf9BgLQ9aPjCQLQ9Z/BCQLQ9aufCALQ9af9BwLQ9ZONBQLQ9Y/zBgKpvbTjCAKpvbDBCAKpvbyfBwKpvbj9BgKpvaTjCQKpvaDBCQKpvayfCAKpvaj9BwKpvZSNBQKpvZDzBgLmg7TjCALmg7DBCALmg7yfBwLmg7j9BgLmg6TjCQLmg6DBCQLmg6yfCALmg6j9BwLmg5SNBQLmg5DzBgKni7TjCAKni7DBCAKni7yfBwKni7j9BgKni6TjCQKni6DBCQKni6yfCAKni6j9BwKni5SNBQKni5DzBgLMlbTjCALMlbDBCALMlbyfBwLMlbj9BgLMlaTjCQLMlaDBCQLMlayfCALMlaj9BwLMlZSNBQLMlZDzBgKl3bTjCAKl3bDBCAKl3byfBwKl3bj9BgKl3aTjCQKl3aDBCQKl3ayfCAKl3aj9BwKl3ZSNBQKl3ZDzBgLio7TjCALio7DBCALio7yfBwLio7j9BgLio6TjCQLio6DBCQLio6yfCALio6j9BwLio5SNBQLio5DzBgL8z8G8CQL335n5CAK2w+6WDQKBwOn/CQLA2ZDZCAK76eiVCALKueDfCQLFybicCQKk0IDXDQKf4NiTDQL8z72eCQL335XbCALbs8/1B6QmQNtpkEghTyPAwCOeRwRVO+Kb" />
+</div>
+
+</form>
+<?php
+}else{
+echo "<br>muestra :" ;
+}
+?>
+</body>
+</html>

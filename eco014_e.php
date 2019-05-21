@@ -1,0 +1,311 @@
+<?php
+require_once 'admin/config.php';
+
+header('Content-type: application/vnd.ms-excel');
+header("Content-Disposition: attachment; filename=archivo.xls");
+header("Pragma: no-cache");
+header("Expires: 0");
+
+$codigo_w  = $_GET["CODIGO"];
+$pos1 = strpos($codigo_w, 'x');
+$pos2 = strpos($codigo_w, 'y');
+
+$rut_w    = substr($_GET["CODIGO"], 0, $pos1) ;
+$fecha1_w = substr($_GET["CODIGO"], $pos1 + 1, 10) ;
+$fecha2_w =  substr($_GET["CODIGO"], $pos2 + 1, 10) ;
+$nombre_w = "Todos";
+/*
+$rut_w    = $_SESSION['medliq_s'] ;
+$fecha1_w = $_SESSION['fliq1_s'] ;
+$fecha2_w = $_SESSION['fliq2_s'] ;
+*/
+
+//rescata nombre medico
+
+if ($rut_w <> 0 ){
+	$link = mysqli_connect(DB_SERVER,DB_USER,DB_PASS,DB_NAME);
+	$query="call ECO_PSEL_MEDICOS(null,null,'".$rut_w."')";
+	
+	$r=mysqli_query($link,$query) or die("No se pudo ejecutar la consulta ".$query);
+	
+	while($registro=mysqli_fetch_array($r))
+	{    
+         $nombre_w= $registro[2]." ".$registro[3]." ".$registro[1];
+		
+	}
+	
+	mysqli_close($link);
+
+}
+
+echo "<table border=1> ";
+// echo "<tr> ";
+echo '<tr style="color:#F7F7F7;background-color:#A55129;">';
+echo "<th>Rut Medico</th> ";
+echo "<th>Nombre Medico</th> ";
+echo "<th>Desde</th> ";
+echo "<th>Hasta</th> ";
+echo "</tr> ";
+echo "<tr> ";
+echo "<td>".$rut_w."</font></td> ";
+echo "<td>".$nombre_w."</font></td> ";
+echo "<td>".$fecha1_w ."</td> ";
+echo "<td>".$fecha2_w ."</td> ";
+echo "</tr> ";
+echo "</table> ";
+ 
+	if ($rut_w == "0") {
+		$rut_w = NULL;
+		} 	
+	//Conexion con la base
+	$link = mysqli_connect(DB_SERVER,DB_USER,DB_PASS,DB_NAME);
+	
+	//Ejecutamos consulta resumen prevision
+    if (strlen($fecha1_w) == 0){
+	  	$consulta="call ECO_PSEL_SOLIC_RES_PREV('".$rut_w."',null,null)";
+        }
+    elseif (strlen($fecha2_w) == 0) {
+		$consulta="call ECO_PSEL_SOLIC_RES_PREV('".$rut_w."',STR_TO_DATE('".$fecha1_w."','%d/%m/%Y'),null)";
+
+	    }
+	 else {
+		$consulta="call ECO_PSEL_SOLIC_RES_PREV('".$rut_w."',STR_TO_DATE('".$fecha1_w."','%d/%m/%Y'),STR_TO_DATE('".$fecha2_w."','%d/%m/%Y'))";
+
+	    }
+		
+	$result=mysqli_query($link,$consulta);
+	
+	echo '<TR>';
+	echo '<td background="ivvpp/ivvpp0002.jpg" height="145" style="width: 34px"></td>';
+	echo '	<td vAlign="top" align="center" width="700" height="145">';
+    echo '		<P><table class="link10" cellspacing="0" cellpadding="3" align="Center" rules="rows" border="1" id="dgrid" style="background-color:White;border-color:#E7E7FF;border-width:1px;border-style:None;height:20px;width:700px;border-collapse:collapse;">';
+	echo '<tr style="color:#F7F7F7;background-color:#A55129;">';
+	echo '	<th>Cantidad</th><th>Prevision</th><th>Total</th>';
+	echo '</tr>';
+
+	$canprev_w = 0; 
+    $totprev_w = 0; 
+	//Mostramos los registros
+	while ($row=mysqli_fetch_array($result))
+		{
+		  echo '<tr style="color:#4A3C8C;">'; 
+  		  echo '<td align="center">'.$row["cantprev"].' </td>';
+		  echo '<td>'.$row["nPrevision"].'</td>';
+  		  echo '<td>'.$row["totexamen"].'</td>';
+		  echo '</tr>';
+		  $totprev_w += $row["totexamen"];
+		  $canprev_w += $row["cantprev"];
+    	}
+		
+	mysqli_free_result($result);
+	mysqli_close($link);
+		  echo '<tr style="color:#4A3C8C;" >'; 
+  		  echo '<td><HR width=100%></HR></td>';
+		  echo '<td><HR width=100%></HR></td>';
+		  echo '<td><HR width=100%></HR></td>';
+  		  echo '</tr>';
+
+		  echo '<tr style="color:#4A3C8C;" >'; 
+  		  echo '<td align="center">'.$canprev_w.'</td>';
+		  echo '<td></td>';
+  		  echo '<td>'.$totprev_w.'</td>';
+		  echo '</tr>';
+
+		  echo '<tr style="color:#4A3C8C;" >'; 
+  		  echo '<td>&nbsp;</td>';
+		  echo '<td>&nbsp;</td>';
+		  echo '<td>&nbsp;</td>';
+  		  echo '</tr>';
+		  
+	//Conexion con la base
+	$link = mysqli_connect(DB_SERVER,DB_USER,DB_PASS,DB_NAME);
+	
+  //Ejecutamos consulta resumen fotos
+    if (strlen($fecha1_w) == 0){
+	  	$consulta="call ECO_PSEL_SOLIC_RES_FOT('".$rut_w."',null,null)";
+        }
+    elseif (strlen($fecha2_w) == 0) {
+		$consulta="call ECO_PSEL_SOLIC_RES_FOT('".$rut_w."',STR_TO_DATE('".$fecha1_w."','%d/%m/%Y'),null)";
+
+	    }
+	 else {
+		$consulta="call ECO_PSEL_SOLIC_RES_FOT('".$rut_w."',STR_TO_DATE('".$fecha1_w."','%d/%m/%Y'),STR_TO_DATE('".$fecha2_w."','%d/%m/%Y'))";
+
+	    }
+		
+	$result=mysqli_query($link,$consulta);
+	
+//	echo '<TR>';
+//	echo '<td background="ivvpp/ivvpp0002.jpg" height="145" style="width: 34px"></td>';
+//	echo '	<td vAlign="top" align="center" width="500" height="145">';
+ //   echo '		<P><table class="link10" cellspacing="0" cellpadding="3" align="Left" rules="rows" border="1" id="dgrid" style="background-color:White;border-color:#E7E7FF;border-width:1px;border-style:None;height:20px;width:454px;border-collapse:collapse;">';
+	echo '<tr style="color:#F7F7F7;background-color:#A55129;">';
+	echo '	<td>Cantidad</td><td>Fotos</td><td>Total</td>';
+	echo '</tr>';
+
+    $totfot_w = 0; 
+	//Mostramos los registros
+	while ($row=mysqli_fetch_array($result))
+		{
+		  echo '<tr style="color:#4A3C8C;">'; 
+  		  echo '<td align="center">'.$row["cantbn"].'</td>';
+		  echo '<td>Fotos B/N</td>';
+  		  echo '<td>'.$row["totbn"].'</td>';
+		  echo '</tr>';
+		  $totfot_w += $row["totbn"]; 
+    	}
+	mysqli_free_result($result);
+	mysqli_close($link);
+	
+	//Conexion con la base
+	$link = mysqli_connect(DB_SERVER,DB_USER,DB_PASS,DB_NAME);
+	
+  //Ejecutamos consulta resumen fotos
+    if (strlen($fecha1_w) == 0){
+	  	$consulta="call ECO_PSEL_SOLIC_RES_FOT('".$rut_w."',null,null)";
+        }
+    elseif (strlen($fecha2_w) == 0) {
+		$consulta="call ECO_PSEL_SOLIC_RES_FOT('".$rut_w."',STR_TO_DATE('".$fecha1_w."','%d/%m/%Y'),null)";
+
+	    }
+	 else {
+		$consulta="call ECO_PSEL_SOLIC_RES_FOT('".$rut_w."',STR_TO_DATE('".$fecha1_w."','%d/%m/%Y'),STR_TO_DATE('".$fecha2_w."','%d/%m/%Y'))";
+
+	    }
+		
+	
+	$result=mysqli_query($link,$consulta);
+	while ($row=mysqli_fetch_array($result))
+		{
+		  echo '<tr style="color:#4A3C8C;">'; 
+  		  echo '<td align="center">'.$row["cantcol"].'</td>';
+		  echo '<td>Fotos Color</td>';
+  		  echo '<td>'.$row["totcol"].'</td>';
+		  echo '</tr>';
+		  $totfot_w += $row["totcol"]; 
+    	}
+	mysqli_free_result($result);
+	mysqli_close($link);
+
+
+		  echo '<tr style="color:#4A3C8C;" >'; 
+  		  echo '<td><HR width=100%></HR></td>';
+		  echo '<td><HR width=100%></HR></td>';
+		  echo '<td><HR width=100%></HR></td>';
+  		  echo '</tr>';
+
+		  echo '<tr style="color:#4A3C8C;" >'; 
+  		  echo '<td></td>';
+		  echo '<td></td>';
+  		  echo '<td>'.$totfot_w.'</td>';
+		  echo '</tr>';
+
+		  echo '<tr style="color:#4A3C8C;" >'; 
+  		  echo '<td>&nbsp;</td>';
+		  echo '<td>&nbsp;</td>';
+		  echo '<td>&nbsp;</td>';
+  		  echo '</tr>';
+
+
+	
+	
+	//Conexion con la base
+	$link = mysqli_connect(DB_SERVER,DB_USER,DB_PASS,DB_NAME);
+	
+  //Ejecutamos consulta detalle solicitudes
+    if (strlen($fecha1_w) == 0){
+	  	$consulta="call ECO_PSEL_SOLIC_LIQ('".$rut_w."',null,null)";
+        }
+    elseif (strlen($fecha2_w) == 0) {
+		$consulta="call ECO_PSEL_SOLIC_LIQ('".$rut_w."',STR_TO_DATE('".$fecha1_w."','%d/%m/%Y'),null)";
+
+	    }
+	 else {
+		$consulta="call ECO_PSEL_SOLIC_LIQ('".$rut_w."',STR_TO_DATE('".$fecha1_w."','%d/%m/%Y'),STR_TO_DATE('".$fecha2_w."','%d/%m/%Y'))";
+
+	    }
+		
+	$result=mysqli_query($link,$consulta);
+	
+//	echo '<TR>';
+//	echo '<td background="ivvpp/ivvpp0002.jpg" height="145" style="width: 34px"></td>';
+//	echo '	<td vAlign="top" align="center" width="500" height="145">';
+//    echo '		<P><table class="link10" cellspacing="0" cellpadding="3" align="Left" rules="rows" border="1" id="dgrid" style="background-color:White;border-color:#E7E7FF;border-width:1px;border-style:None;height:20px;width:454px;border-collapse:collapse;">';
+	echo '<tr style="color:#F7F7F7;background-color:#A55129;">';
+	echo '	<td>Fecha</td><td>Paciente</td><td>Examen</td><td>Previsión</td><td>B/N</td><td>Color</td><td>Examen</td><td>Solicitado</td>';
+	echo '</tr>';
+  
+    $stotbn_w = 0;
+	$stotcol_w = 0;
+	$stotex_w = 0;
+
+	//Mostramos los registros
+	while ($row=mysqli_fetch_array($result))
+		{
+		  echo '<tr style="color:#4A3C8C;">'; 
+  		  echo '<td>'.$row["fecha"].'</td>';
+		  echo '<td>'.utf8_decode($row["npaciente"])." ".utf8_decode($row["ppaciente"])." ".utf8_decode($row["mpaciente"]).'</td>';
+  		  echo '<td>'.$row["nExamen"].'</td>';
+		  echo '<td>'.$row["nPrevision"].'</td>';
+		  echo '<td>'.$row["totbn"].'</td>';
+		  echo '<td>'.$row["totcol"].'</td>';
+		  echo '<td>'.$row["vtotexamen"].'</td>';
+		  echo '<td>'.$row["tsolicita"].'</td>';
+		  echo '</tr>';
+		  
+		  $stotbn_w += $row["totbn"];
+		  $stotcol_w += $row["totcol"];
+		  $stotex_w += $row["vtotexamen"];
+
+    	}
+	mysqli_free_result($result);
+	mysqli_close($link);
+
+		  echo '<tr style="color:#4A3C8C;" >'; 
+  		  echo '<td><HR width=100%></HR></td>';
+		  echo '<td><HR width=100%></HR></td>';
+		  echo '<td><HR width=100%></HR></td>';
+		   echo '<td><HR width=100%></HR></td>';
+		  echo '<td><HR width=100%></HR></td>';
+		  echo '<td><HR width=100%></HR></td>';
+ 		   echo '<td><HR width=100%></HR></td>';
+		  echo '<td><HR width=100%></HR></td>';
+  		  echo '</tr>';
+
+		  echo '<tr style="color:#4A3C8C;" >'; 
+  		  echo '<td></td>';
+		  echo '<td></td>';
+		  echo '<td>Totales</td>';
+		  echo '<td></td>';
+  		  echo '<td>'.$stotbn_w.'</td>';
+     	  echo '<td>'.$stotcol_w.'</td>';
+		  echo '<td>'.$stotex_w.'</td>';
+		  echo '<td></td>';
+		  echo '</tr>';
+		
+    echo '</table></P>	</td> </TR>';
+
+/*
+echo "<table border=1> ";
+echo "<tr> ";
+echo "<th>Nombre</th> ";
+echo "<th>Email</th> ";
+echo "</tr> ";
+echo "<tr> ";
+echo "<td><font color=green>Manuel Gomez</font></td> ";
+echo "<td>manuel@gomez.com</td> ";
+echo "</tr> ";
+echo "<tr> ";
+echo "<td><font color=blue>Pago gomez</font></td> ";
+echo "<td>paco@gomez.com</td> ";
+echo "</tr> ";
+echo "</table> ";
+*/
+
+
+
+
+?>
+
+
+

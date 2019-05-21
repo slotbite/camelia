@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+<head>
+<title>Sistema Camelia</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="/menu_assets/styles.css" rel="stylesheet" type="text/css">
+
+     <script language="javascript" type ="text/javascript" >
+	
+			function f_open(pag,nombre){
+			/*-------------------------*/
+	              window.open( pag,nombre,'width=750, height=550, status= no, resizable= no, menubar=no, scrollbars=yes, location=no, top=100, left=100').focus();
+			
+			}
+ 
+ 		function oPenhtml(pag) {
+//		 alert( pag )
+		location.href= pag ;
+	
+		}
+
+		</script>
+
+</head>
+
+<body bgcolor="#98999D" >
+<div id='cssmenu'>
+  <ul>
+    <li class='active '><a href='index.html'><span>SISTEMA CAMELIA</span></a></li>
+    <li class='has-sub '><a href='#'><span>Mantención Bases de Datos </span></a> 
+      <ul>
+        <li><a href="javascript:f_open('cam006.php?OPC2=I','ventana');"><span>Locales</span></a></li>
+        <li><a href="javascript:f_open('proveedores.html?OPC=I','proveedores')"><span>Proveedores</span></a></li>
+        <li><a href="javascript:f_open('articulos.html?OPC=I','articulos')"><span>Artículos</span></a></li>
+        <li><a href="javascript:f_open('cam010.php?OPC2=I','colores')"><span>Colores</span></a></li>
+        <li><a href="javascript:f_open('inventario.html?OPC=I','inventario')"><span>Inventario</span></a></li>
+        <li><a href="javascript:f_open('cam014.php?OPC2=I','vendedores')"><span>Vendedores</span></a></li>
+        <li><a href="javascript:f_open('cam016.php?OPC2=I','Habilitados')"><span>Habilitados</span></a></li>
+        <li><a href="javascript:f_open('cam018.php?OPC2=I','Instituciones')"><span>Instituciones</span></a></li>
+        <li><a href="javascript:f_open('cam020.php?OPC2=I','Bancos')"><span>Bancos</span></a></li>
+        <li><a href="javascript:f_open('cam022.php?OPC2=I')",'Parámetros'><span>Parámetros</span></a></li>
+      </ul>
+    </li>
+    <li class='has-sub '><a href='#'><span>Consultas e Informes</span></a> 
+      <ul>
+        <li><a href="javascript:f_open('cam023.php')",'Locales'><span>Locales</span></a></li>
+        <li class='has-sub '><a href='#'><span>Proveedores</span></a> 
+          <ul>
+            <li><a href="javascript:f_open('proveedores2.html','Por Código')"><span>Por Código</span></a></li>
+            <li><a href="javascript:f_open('proveedores3.html','Por Nombre')"><span>Por Nombre</span></a></li>
+          </ul>
+        </li>
+        <li><a href="javascript:f_open('articulos2.html')",'Artículos'><span>Artículos</span></a></li>
+        <li class='has-sub '><a href='#'><span>Colores</span></a>
+          <ul>
+            <li><a href="javascript:f_open('cam027.php','Por Código')"><span>Por Código</span></a></li>
+            <li><a href="javascript:f_open('cam028.php','Por Nombre')"><span>Por Nombre</span></a></li>
+          </ul>
+		</li>
+        <li class='has-sub '><a href='#'><span>Inventario</span></a>
+		  <ul>
+            <li><a href="javascript:f_open('inventario_det.html','Detallado')"><span>Detallado</span></a></li>
+            <li><a href='#'><span>A Nivel de Proveedor</span></a></li>
+            <li><a href='#'><span>A Nivel de Artículo</span></a></li>
+            <li><a href='#'><span>Resumen por Proveedor</span></a></li>
+          </ul>
+		</li>
+        <li class='has-sub '><a href='#'><span>Vendedores</span></a>
+		   <ul>
+            <li><a href='#'><span>Por Código</span></a></li>
+            <li><a href='#'><span>Por Nombre</span></a></li>
+          </ul>
+		</li>
+        <li class='has-sub '><a href='#'><span>Habilitados</span></a>
+		   <ul>
+            <li><a href='#'><span>Por Código</span></a></li>
+            <li><a href='#'><span>Por Nombre</span></a></li>
+          </ul>
+		</li>
+        <li class='has-sub '><a href='#'><span>Instituciones</span></a>
+		   <ul>
+            <li><a href='#'><span>Por Código</span></a></li>
+            <li><a href='#'><span>Por Nombre</span></a></li>
+          </ul>
+		</li>
+        <li><a href="javascript:f_open('cam031.php','Cuadratura Caja')"><span>Cuadratura Caja</span></a></li>
+        <li><a href="javascript:f_open('cam032.php','Vtas. x Vendedor')"><span>Vtas. x Vendedor</span></a></li>
+        <li><a href="javascript:f_open('cam030.php','Vtas. x Fecha')"><span>Vtas. x Fecha</span></a></li>
+      </ul>
+    </li>
+    <li class='has-sub '><a href='#'><span>Proveedores</span></a> 
+      <ul>
+        <li class='has-sub '><a href='#'><span>Doctos. de Proveedores</span></a>
+		   <ul>
+            <li><a href="javascript:f_open('cam033.php','Documentos CON Inventario')"><span>Documentos CON Inventario</span></a></li>
+            <li><a href='#'><span>Documentos SIN Inventario</span></a></li>
+            <li><a href='#'><span>Factutas con Guías</span></a></li>
+          </ul>
+		</li>
+        <li><a href='#'><span>Pagos a Proveedores</span></a></li>
+        <li><a href='#'><span>Consultas/Informes</span></a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+</body>
+</html>
